@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 namespace SixLabors.Fonts.WellKnownIds
@@ -6,7 +6,7 @@ namespace SixLabors.Fonts.WellKnownIds
     /// <summary>
     /// platforms ids
     /// </summary>
-    internal enum PlatformIDs : ushort
+    public enum PlatformIDs : ushort
     {
         /// <summary>
         /// Unicode platform

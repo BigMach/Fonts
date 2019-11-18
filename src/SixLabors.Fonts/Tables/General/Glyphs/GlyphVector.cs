@@ -1,11 +1,11 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 using System.Numerics;
 
 namespace SixLabors.Fonts.Tables.General.Glyphs
 {
-    internal readonly struct GlyphVector
+    public readonly struct GlyphVector
     {
         internal GlyphVector(Vector2[] controlPoints, bool[] onCurves, ushort[] endPoints, Bounds bounds)
         {

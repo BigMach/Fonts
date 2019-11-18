@@ -1,10 +1,10 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 namespace SixLabors.Fonts.Tables.General
 {
     [TableName(TableName)]
-    internal sealed class OS2Table : Table
+    public sealed class OS2Table : Table
     {
         private const string TableName = "OS/2";
 
@@ -308,7 +308,7 @@ namespace SixLabors.Fonts.Tables.General
             this.upperOpticalPointSize = upperOpticalPointSize;
         }
 
-        internal enum FontStyleSelection : ushort
+        public enum FontStyleSelection : ushort
         {
             // 0    bit 1   ITALIC  Font contains italic or oblique characters, otherwise they are upright.
             ITALIC = 1,

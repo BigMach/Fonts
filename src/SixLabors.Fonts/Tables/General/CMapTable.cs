@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using SixLabors.Fonts.WellKnownIds;
 namespace SixLabors.Fonts.Tables.General
 {
     [TableName(TableName)]
-    internal sealed class CMapTable : Table
+    public sealed class CMapTable : Table
     {
         private const string TableName = "cmap";
         private readonly CMapSubTable table;
@@ -20,7 +20,7 @@ namespace SixLabors.Fonts.Tables.General
         {
             this.Tables = tables;
 
-            // lets just pick the best table for us.. lets jsut treat everything as windows and get the format 4 if possible
+            // lets just pick the best table for us.. lets just treat everything as windows and get the format 4 if possible
             CMapSubTable table = null;
             foreach (CMapSubTable t in this.Tables)
             {

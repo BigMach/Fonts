@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using SixLabors.Fonts.Tables.General.Kern;
 namespace SixLabors.Fonts.Tables.General
 {
     [TableName(TableName)]
-    internal sealed class KerningTable : Table
+    public sealed class KerningTable : Table
     {
         private const string TableName = "kern";
         private readonly KerningSubTable[] kerningSubTable;

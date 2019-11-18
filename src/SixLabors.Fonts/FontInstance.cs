@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
@@ -82,9 +82,46 @@ namespace SixLabors.Fonts
         /// </value>
         public ushort EmSize { get; }
 
+        /// <summary>
+        /// Gets the CMap table
+        /// </summary>
+        public CMapTable CMapTable => this.cmap;
+
+        /// <summary>
+        /// Gets the OS/2 table
+        /// </summary>
+        public OS2Table OS2Table => this.os2;
+        
+        /// <summary>
+        /// Gets the Glyph table
+        /// </summary>
+        public GlyphTable GlyphTable => this.glyphs;
+
+        /// <summary>
+        /// Gets the Horizontal Metrics table
+        /// </summary>
+        public HorizontalMetricsTable HorizontalMetricsTable => this.horizontalMetrics;
+
+        /// <summary>
+        /// Gets the Head table
+        /// </summary>
+        public HeadTable HeadTable => this.head;
+
+        /// <summary>
+        /// Gets the Kerning table
+        /// </summary>
+        public KerningTable KerningTable => this.kerning;
+
+
+
         public FontDescription Description { get; }
 
-        internal ushort GetGlyphIndex(int codePoint)
+        /// <summary>
+        /// Get the glyph index
+        /// </summary>
+        /// <param name="codePoint"></param>
+        /// <returns></returns>
+        public ushort GetGlyphIndex(int codePoint)
         {
             if (codePoint > ushort.MaxValue)
             {

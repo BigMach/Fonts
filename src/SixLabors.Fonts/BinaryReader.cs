@@ -12,7 +12,7 @@ namespace SixLabors.Fonts
     /// <summary>
     /// BinaryReader using bigendian encoding.
     /// </summary>
-    internal class BinaryReader : IDisposable
+    public class BinaryReader : IDisposable
     {
         /// <summary>
         /// Buffer used for temporary storage before conversion into primitives

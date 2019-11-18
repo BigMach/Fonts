@@ -1,11 +1,11 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 using System.Numerics;
 
 namespace SixLabors.Fonts.Tables.General.Kern
 {
-    internal abstract class KerningSubTable
+    public abstract class KerningSubTable
     {
         private readonly KerningCoverage coverage;
 

@@ -5,7 +5,7 @@ using System.IO;
 
 namespace SixLabors.Fonts.Tables
 {
-    internal class TableHeader
+    public class TableHeader
     {
         public TableHeader(string tag, uint checkSum, uint offset, uint len)
         {

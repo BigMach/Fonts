@@ -1,9 +1,9 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 namespace SixLabors.Fonts.Tables.General.Kern
 {
-    internal readonly struct KerningCoverage
+    public readonly struct KerningCoverage
     {
         private KerningCoverage(bool horizontal, bool hasMinimum, bool crossStream, bool overrideAccumulator, byte format)
         {

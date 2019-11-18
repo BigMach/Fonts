@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
@@ -8,7 +8,7 @@ using SixLabors.Fonts.Exceptions;
 namespace SixLabors.Fonts.Tables.General
 {
     [TableName(TableName)]
-    internal class HeadTable : Table
+    public class HeadTable : Table
     {
         private const string TableName = "head";
 
@@ -155,14 +155,14 @@ namespace SixLabors.Fonts.Tables.General
                 indexToLocFormat);
         }
 
-        internal enum IndexLocationFormats : short
+        public enum IndexLocationFormats : short
         {
             Offset16 = 0,
             Offset32 = 1,
         }
 
         [Flags]
-        internal enum HeadFlags : ushort
+        public enum HeadFlags : ushort
         {
             // Bit 0: Baseline for font at y = 0;
             // Bit 1: Left sidebearing point at x = 0(relevant only for TrueType rasterizers) — see the note below regarding variable fonts;
@@ -192,7 +192,7 @@ namespace SixLabors.Fonts.Tables.General
         }
 
         [Flags]
-        internal enum HeadMacStyle : ushort
+        public enum HeadMacStyle : ushort
         {
             // Bit 0: Bold (if set to 1);
             // Bit 1: Italic(if set to 1)

@@ -5,7 +5,7 @@ using System.Numerics;
 
 namespace SixLabors.Fonts
 {
-    internal readonly struct Bounds
+    public readonly struct Bounds
     {
         public Bounds(Vector2 min, Vector2 max)
         {

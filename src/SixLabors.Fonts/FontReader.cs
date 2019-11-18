@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
@@ -10,7 +10,7 @@ using SixLabors.Fonts.Tables;
 
 namespace SixLabors.Fonts
 {
-    internal sealed class FontReader
+    public sealed class FontReader
     {
         private readonly Dictionary<Type, Table> loadedTables = new Dictionary<Type, Table>();
 
@@ -141,7 +141,7 @@ namespace SixLabors.Fonts
             return header?.CreateReader(this.stream);
         }
 
-        internal enum OutlineTypes : uint
+        public enum OutlineTypes : uint
         {
             TrueType = 0x00010000,
             CFF = 0x4F54544F
