@@ -19,6 +19,7 @@ namespace SixLabors.Fonts
         private readonly HeadTable head;
         private readonly OS2Table os2;
         private readonly HorizontalMetricsTable horizontalMetrics;
+        private readonly HorizontalHeadTable horizontalHead;
         private readonly GlyphInstance[] glyphCache;
         private readonly KerningTable kerning;
 
@@ -55,12 +56,14 @@ namespace SixLabors.Fonts
         /// <param name="horizontalMetrics">The horizontal metrics.</param>
         /// <param name="head">The head.</param>
         /// <param name="kern">The kern.</param>
-        internal FontInstance(NameTable nameTable, CMapTable cmap, GlyphTable glyphs, OS2Table os2, HorizontalMetricsTable horizontalMetrics, HeadTable head, KerningTable kern)
+        /// <param name="horizontalHead">The horizontal head</param>
+        internal FontInstance(NameTable nameTable, CMapTable cmap, GlyphTable glyphs, OS2Table os2, HorizontalMetricsTable horizontalMetrics, HeadTable head, KerningTable kern, HorizontalHeadTable horizontalHead)
         {
             this.cmap = cmap;
             this.os2 = os2;
             this.glyphs = glyphs;
             this.horizontalMetrics = horizontalMetrics;
+            this.horizontalHead = horizontalHead;
             this.head = head;
             this.glyphCache = new GlyphInstance[this.glyphs.GlyphCount];
 
@@ -115,6 +118,8 @@ namespace SixLabors.Fonts
 
 
         public FontDescription Description { get; }
+
+        public HorizontalHeadTable HorizontalHeadTable => this.horizontalHead;
 
         /// <summary>
         /// Get the glyph index
@@ -215,12 +220,12 @@ namespace SixLabors.Fonts
             GlyphTable glyphs = reader.GetTable<GlyphTable>(); // glyf
             KerningTable kern = reader.GetTable<KerningTable>(); // kern - Kerning
             NameTable nameTable = reader.GetTable<NameTable>(); // name
-
+            HorizontalHeadTable horizontalHeadTable = reader.GetTable<HorizontalHeadTable>();
             // post - PostScript information
             // gasp - Grid-fitting/Scan-conversion (optional table)
             // PCLT - PCL 5 data
             // DSIG - Digital signature
-            return new FontInstance(nameTable, cmap, glyphs, os2, horizontalMetrics, head, kern);
+            return new FontInstance(nameTable, cmap, glyphs, os2, horizontalMetrics, head, kern, horizontalHeadTable);
         }
     }
 }

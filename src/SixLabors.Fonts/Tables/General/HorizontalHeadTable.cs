@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 using SixLabors.Fonts.Exceptions;
@@ -6,7 +6,7 @@ using SixLabors.Fonts.Exceptions;
 namespace SixLabors.Fonts.Tables.General
 {
     [TableName(TableName)]
-    internal class HorizontalHeadTable : Table
+    public class HorizontalHeadTable : Table
     {
         private const string TableName = "hhea";
 

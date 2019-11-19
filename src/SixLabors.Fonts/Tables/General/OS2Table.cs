@@ -10,6 +10,13 @@ namespace SixLabors.Fonts.Tables.General
 
         public FontStyleSelection FontStyle { get; }
 
+        public ushort WinAscent => this.winAscent;
+
+        public ushort WinDescent => this.winDescent;
+
+        public short StrikeoutPosition => this.strikeoutPosition;
+        public short StrikeoutSize => this.strikeoutSize;
+
         private ushort styleType;
         private byte[] panose;
         private short capHeight;
