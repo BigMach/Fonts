@@ -13,18 +13,24 @@ namespace SixLabors.Fonts.Tests.Fakes
         }
 
         internal FakeFontInstance(List<FakeGlyphSource> glyphs)
-            : base(GenerateNameTable(), 
-                  GenerateCMapTable(glyphs), 
-                  new FakeGlyphTable(glyphs), 
-                  GenerateOS2Table(), 
-                  GenerateHorizontalMetricsTable(glyphs), 
-                  GenerateHeadTable(glyphs), 
-                  new KerningTable(new Fonts.Tables.General.Kern.KerningSubTable[0]))
+            : base(GenerateNameTable(),
+                  GenerateCMapTable(glyphs),
+                  new FakeGlyphTable(glyphs),
+                  GenerateOS2Table(),
+                  GenerateHorizontalMetricsTable(glyphs),
+                  GenerateHeadTable(glyphs),
+                  new KerningTable(new Fonts.Tables.General.Kern.KerningSubTable[0]),
+                  GenerateHorizontalHeadTable(glyphs))
         {
         }
 
-        internal FakeFontInstance(NameTable nameTable, CMapTable cmap, GlyphTable glyphs, OS2Table os2, HorizontalMetricsTable horizontalMetrics, HeadTable head, KerningTable kern) 
-            : base(nameTable, cmap, glyphs, os2, horizontalMetrics, head, kern) 
+        private static HorizontalHeadTable GenerateHorizontalHeadTable(List<FakeGlyphSource> glyphs)
+        {
+            return new HorizontalHeadTable(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+        }
+
+        internal FakeFontInstance(NameTable nameTable, CMapTable cmap, GlyphTable glyphs, OS2Table os2, HorizontalMetricsTable horizontalMetrics, HeadTable head, KerningTable kern, HorizontalHeadTable horizontalHead)
+            : base(nameTable, cmap, glyphs, os2, horizontalMetrics, head, kern, horizontalHead)
         {
         }
 
@@ -40,7 +46,8 @@ namespace SixLabors.Fonts.Tests.Fakes
                 GenerateOS2TableWithVaryingVerticalFontMetrics(),
                 GenerateHorizontalMetricsTable(glyphs),
                 GenerateHeadTable(glyphs),
-                new KerningTable(new Fonts.Tables.General.Kern.KerningSubTable[0])
+                new KerningTable(new Fonts.Tables.General.Kern.KerningSubTable[0]),
+                GenerateHorizontalHeadTable(glyphs)
             );
             return result;
         }
