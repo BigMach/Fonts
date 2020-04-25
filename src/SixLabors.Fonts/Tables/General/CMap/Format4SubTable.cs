@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors and contributors.
+// Copyright (c) Six Labors and contributors.
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ namespace SixLabors.Fonts.Tables.General.CMap
                 {
                     if (seg.Offset == 0)
                     {
-                        return (ushort)((charAsInt + seg.Delta) % ushort.MaxValue); // TODO: bitmask instead?
+                        return (ushort)((charAsInt + seg.Delta) % (ushort.MaxValue + 1)); // TODO: bitmask instead?
                     }
                     else
                     {
